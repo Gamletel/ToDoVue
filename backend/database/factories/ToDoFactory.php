@@ -18,8 +18,8 @@ class ToDoFactory extends Factory
     {
         return [
             'title' => fake()->text(128),
-            'subtitle' => fake()->realTextBetween(0, 256),
-            'text' => fake()->realTextBetween(0, 1024),
+            'subtitle' => fake()->realTextBetween(15, 256),
+            'text' => fake()->realTextBetween(15, 1024),
 //            'due_date'=>fake()->dateTime('tomorrow'),
         ];
     }

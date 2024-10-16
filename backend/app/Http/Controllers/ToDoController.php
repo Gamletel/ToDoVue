@@ -9,14 +9,28 @@ use Illuminate\Http\Request;
 
 class ToDoController extends Controller
 {
-
-    /**
-     * @return TodoCollection
-     */
     public function index()
     {
-        $to_dos = ToDo::all();
+        $to_dos = ToDo::orderBy('id', 'DESC')->get();
 
-        return new TodoCollection($to_dos);
+        return response()->json($to_dos);
+    }
+
+    public function store(Request $request)
+    {
+        $data = $request->validate([
+            'title'=>'required|string|min:10|max:128',
+            'subtitle'=>'nullable|string|max:256',
+        ]);
+
+        $todo = new ToDo;
+        $todo->title = $data['title'];
+        $todo->subtitle = $data['subtitle'];
+        $todo->save();
+
+        return response()->json([
+            'message'=>'Todo successfully created',
+            'todo'=>$todo,
+        ], 200);
     }
 }

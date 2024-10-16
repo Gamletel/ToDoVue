@@ -11,8 +11,8 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: '/create',
-      name: 'create',
+      path: '/todo/create',
+      name: 'todo.create',
       component: CreateView,
     },
   ],

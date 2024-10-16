@@ -15,8 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('subtitle')->nullable();
-            $table->longText('text')->nullable();
-            $table->dateTime('due_date')->nullable();
+            $table->boolean('isCompleted')->default(false);
             $table->timestamps();
         });
     }

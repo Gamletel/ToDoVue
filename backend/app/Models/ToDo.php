@@ -9,4 +9,11 @@ class ToDo extends Model
 {
     /** @use HasFactory<\Database\Factories\ToDoFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'isCompleted',
+        'title',
+        'subtitle',
+        'text',
+    ];
 }
