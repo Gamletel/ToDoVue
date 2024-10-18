@@ -9,7 +9,7 @@ import Footer from "@/components/Footer.vue";
     <Header />
 
     <main>
-      <div class="max-w-screen-xl mx-4">
+      <div class="max-w-screen-xl mx-auto px-4">
       <router-view />
       </div>
     </main>
